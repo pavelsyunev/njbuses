@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Next but to New York</title>
+{% endblock %}
+
+{% block body %}
+<div class="container-md bg-white shadow-sm">
+    <div class="row d-flex justify-content-center pt-4">
+        <div class="col-8">
+        <h1 class="text-center">Next bus to New York</h1>
+        <p class="lead text-center fs-4">
+            🚏 Boulevard EAST 66TH ST
+        </p>
+            </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-8">
+            {% for bus in bus_schedule %}
+                <div class="card my-4">
+                    <div class="card-body text-center fs-1 text-warning bg-dark bus rounded">
+                        {{ bus }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+@font-face{
+    font-family: GAS;
+    src: url(../fonts/GAS_____.TTF);
+}
+
+body {
+    background-color: #f2f2f2;
+    height: 100vh;
+}
+
+.bus {font-family:GAS}
