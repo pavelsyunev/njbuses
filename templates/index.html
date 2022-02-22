@@ -5,17 +5,20 @@
 {% endblock %}
 
 {% block body %}
-<div class="container-md bg-white shadow-sm">
+<div class="container bg-white shadow-sm">
     <div class="row d-flex justify-content-center pt-4">
-        <div class="col-8">
-        <h1 class="text-center">Next bus to New York</h1>
-        <p class="lead text-center fs-4">
-            🚏 Boulevard EAST 66TH ST
-        </p>
-            </div>
+        <div class="col col-md-8">
+        <h1 class="text-center">🚌 Your Next Bus</h1>
+        <div class="btn-group w-100 my-3" role="group">
+            <a href="{{ url_for('index') }}" class="btn btn-warning btn-lg w-25 m-1">Home</a>
+            <a href="{{ url_for('bus_stop', bus_stop_id='32084') }}" class="btn btn-warning btn-lg w-25 m-1" >Hoboken</a>
+            <a href="{{ url_for('bus_stop', bus_stop_id='26229') }}" class="btn btn-warning btn-lg w-25 m-1" >Terminal</a>
+        </div>
+        <p class="fs-3 text-center">{{ bus_stop_name }}</p>
+    </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-8">
+        <div class="col col-md-8">
             {% for bus in bus_schedule %}
                 <div class="card my-4">
                     <div class="card-body text-center fs-1 text-warning bg-dark bus rounded">
